@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: rgb(224, 224, 224);
+}
+
+.header {
+    width: 100%;
+    background-color: white;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 12px;
+}
+
+.header__logo {
+    font-family: 'Caveat', cursive;
+    color: rgb(243, 219, 4);
+}
+
+@media (min-width: 768px) {
+    .header__inner {
+        height: 70px;
+        padding: 0 24px;
+    }
+}
