@@ -19,8 +19,8 @@
     <div class="index__main">
         <aside class="index__sidebar">
             <div class="sidebar__search">
-                <input type="text">
-                <button>検索</button>
+                <input class="search-input" type="text" placeholder="商品名で検索">
+                <button class="search-button">検索</button>
             </div>
             <div class="sidebar__sort">
                 <p>価格順で表示</p>
@@ -37,9 +37,9 @@
                         @endphp
 
                         @if (str_starts_with($img, 'products/'))
-                            <img src="{{ asset('storage/' . $img) }}" alt="{{ $product->name }}（storage）">
+                            <img class="img-storage" src="{{ asset('storage/' . $img) }}" alt="{{ $product->name }}（storage）">
                         @else
-                            <img src="{{ asset($img) }}" alt="{{ $product->name }}（public）">
+                            <img class="img-public" src="{{ asset($img) }}" alt="{{ $product->name }}（public）">
                         @endif
                     </div>
 
