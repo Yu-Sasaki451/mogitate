@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function showIndex(){
-        return view('index');
+    public function index(){
+        $products = Product::Paginate(6);
+        return view('index', compact('products'));
     }
 
     public function create()

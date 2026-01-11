@@ -15,6 +15,6 @@ use App\Http\Controllers\SeasonController;
 |
 */
 
-Route::get('/products', [ProductController::class, 'showIndex']);
+Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/register', [ProductController::class, 'create']);
 Route::post('/products/register', [ProductController::class, 'store']);

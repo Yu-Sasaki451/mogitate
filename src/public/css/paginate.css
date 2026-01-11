@@ -1,0 +1,64 @@
+.index__pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* pager */
+.pager__list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pager__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    /* 小さめ */
+    font-size: 15px;
+    line-height: 1;
+    height: 25px;
+    min-width: 25px;
+
+    color: #9a9a9a;
+    border-radius: 999px;
+    background-color: #ffffff;
+    transition: opacity .12s ease, transform .12s ease;
+}
+
+.pager__link:hover {
+    opacity: .75;
+    transform: translateY(-1px);
+}
+
+/* 現在ページ：黄色の丸 */
+.pager__link--active {
+    background: #f2c400;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* 矢印 */
+.pager__link--arrow {
+    min-width: 20px;
+    font-size: 18px;
+    color: #8e8c8c;
+}
+
+/* 押せない状態 */
+.pager__link--disabled {
+    opacity: .35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.pager__gap {
+    color: #bdbdbd;
+    font-size: 16px;
+}
