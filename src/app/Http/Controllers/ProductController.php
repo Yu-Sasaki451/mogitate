@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Season;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -25,5 +27,26 @@ class ProductController extends Controller
 
     return view('store', compact('imageOptions','subDir','seasons'));
 }
+
+    public function store(Request $request){
+        $products = $request->only([
+            'name',
+            'price',
+            'description',
+        ]);
+        $seasonIds = $request->input('season_ids', []);
+
+        if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('products', 'public');
+        $products['image'] = $path;
+        }
+
+        DB::transaction(function () use ($products, $seasonIds) {
+            $product = Product::create($products);
+            $product->seasons()->sync($seasonIds);
+        });
+
+        return redirect ('/products');
+    }
 
 }
