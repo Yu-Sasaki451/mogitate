@@ -8,4 +8,5 @@
 
 @section('content')
 
+
 @endsection
