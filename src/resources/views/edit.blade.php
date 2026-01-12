@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<form action="" method="post" enctype="multipart/form-data">
+<form action="/products/{{ $product->id }}/update" method="post" enctype="multipart/form-data">
     @method('patch')
     @csrf
     <div class="detail">

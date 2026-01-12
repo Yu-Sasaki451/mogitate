@@ -80,4 +80,22 @@ class ProductController extends Controller
         return view('edit',compact('product','seasons'));
     }
 
+    public function update(Request $request, $id)
+{
+    $product = Product::findOrFail($id);
+
+    $data = $request->only(['name', 'price', 'description']);
+    $product->update($data);
+
+    if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('products', 'public');
+        $product->image = $path;
+        $product->save();
+    }
+
+    $product->seasons()->sync($request->input('season_ids', []));
+
+    return redirect('/products');
+}
+
 }
