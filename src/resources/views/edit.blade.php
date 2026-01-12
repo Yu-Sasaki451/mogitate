@@ -70,7 +70,7 @@
                     <button class="button--update" type="submit">変更を保存</button>
                 </div>
                 <div class="grid--right">
-                    <button  class="button--delete" type="submit">
+                    <button  class="button--delete" type="submit" form="deleteForm">
                         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
                         <path d="M9 3h6l1 2h5v2H3V5h5l1-2zm1 6h2v10h-2V9zm4 0h2v10h-2V9zM6 9h2v10H6V9zm2 12h8a2 2 0 0 0 2-2V7H6v12a2 2 0 0 0 2 2z"/>
                         </svg>
@@ -79,6 +79,10 @@
             </div>
         </div>
     </div>
+</form>
+<form id="deleteForm" action="/products/{{ $product->id }}/delete" method="post">
+    @method('delete')
+    @csrf
 </form>
 <script>
 document.addEventListener('DOMContentLoaded', () => {

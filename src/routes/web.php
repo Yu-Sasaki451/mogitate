@@ -21,3 +21,4 @@ Route::post('/products/register', [ProductController::class, 'store']);
 Route::get('/products/search', [ProductController::class, 'index']);
 Route::get('/products/detail/{id}', [ProductController::class, 'edit']);
 Route::patch('products/{id}/update', [ProductController::class, 'update']);
+Route::delete('products/{id}/delete', [ProductController::class, 'destroy']);

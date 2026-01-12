@@ -80,8 +80,7 @@ class ProductController extends Controller
         return view('edit',compact('product','seasons'));
     }
 
-    public function update(Request $request, $id)
-{
+    public function update(Request $request, $id){
     $product = Product::findOrFail($id);
 
     $data = $request->only(['name', 'price', 'description']);
@@ -96,6 +95,12 @@ class ProductController extends Controller
     $product->seasons()->sync($request->input('season_ids', []));
 
     return redirect('/products');
-}
+    }
+
+    public function destroy($id){
+        $product = Product::find($id)->delete();
+
+        return redirect('/products');
+    }
 
 }
