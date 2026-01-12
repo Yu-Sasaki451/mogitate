@@ -7,7 +7,9 @@
 @endsection
 
 @section('content')
-<form action="">
+<form action="" method="post" enctype="multipart/form-data">
+    @method('patch')
+    @csrf
     <div class="detail">
         <div class="detail__content">
             <div class="breadcrumb">
@@ -15,6 +17,17 @@
             </div>
             <div class="detail__card">
                 <div class="detail__card--img">
+                    @php
+                        $img = ($product->image);
+                    @endphp
+
+                    @if (str_starts_with($img, 'products/'))
+                        <img class="img-storage" id="imagePreview" src="{{ asset('storage/' . $img) }}" alt="{{ $product->name }}（storage）">
+                    @else
+                        <img class="img-public" id="imagePreview" src="{{ asset($img) }}" alt="{{ $product->name }}（public）">
+                    @endif
+
+                    <input type="file" name="image" id="imageInput" hidden accept="image/png,image/jpeg">
                     <button class="store-content__image-button" type="button" id="imagePickBtn">
                         ファイルを選択
                     </button>
@@ -22,15 +35,15 @@
                 <div class="detail__card--meta">
                     <div class="meta__item">
                         <p class="meta__item-title">商品名</p>
-                        <input class="meta__item-input" type="text">
+                        <input class="meta__item-input" type="text" name="name" value="{{ $product->name }}">
                     </div>
                     <div class="meta__item">
                         <p class="meta__item-title">値段</p>
-                        <input class="meta__item-input" type="text">
+                        <input class="meta__item-input" type="text" name="price" value="{{ $product->price }}">
                     </div>
                     <div class="meta__item">
                         <p class="meta__item-title">季節</p>
-                        @php $selected = old('season_ids', []); @endphp
+                        @php $selected = old('season_ids', $product->seasons->pluck('id')->all()); @endphp
 
                         <div class="season">
                             @foreach($seasons as $season)
@@ -49,7 +62,7 @@
             </div>
             <div class="detail__textarea">
                 <p class="detail-title">商品説明</p>
-                <textarea class="textarea" name="" id=""></textarea>
+                <textarea class="textarea" name="description">{{ $product->description }}</textarea>
             </div>
             <div class="detail__button">
                 <div class="grid--center">
@@ -67,4 +80,30 @@
         </div>
     </div>
 </form>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('imagePickBtn');
+    const input = document.getElementById('imageInput');
+    const preview = document.getElementById('imagePreview');
+
+    btn.addEventListener('click', () => input.click());
+
+    input.addEventListener('change', () => {
+        const file = input.files && input.files[0];
+        if (!file) return; // キャンセルなら何もしない（元画像は残す）
+
+        // png/jpegだけに絞る（必要なら）
+        if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
+        input.value = ''; // 選択をリセット
+        return;
+        }
+
+        const url = URL.createObjectURL(file);
+        preview.src = url;
+        preview.onload = () => URL.revokeObjectURL(url);
+    });
+});
+</script>
+
+
 @endsection
