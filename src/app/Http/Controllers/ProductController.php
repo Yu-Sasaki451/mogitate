@@ -74,4 +74,9 @@ class ProductController extends Controller
         return redirect ('/products');
     }
 
+    public function edit(){
+        $seasons = Season::all();
+        return view('edit',compact('seasons'));
+    }
+
 }

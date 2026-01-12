@@ -86,7 +86,7 @@
 
                 <div class="store-content__item">
                     <div class="store-content__item-button">
-                        <button class="button--back" type="button" onclick="history.back()">戻る</button>
+                        <a class="button--back" href="/products">戻る</a>
                         <button class="button--store" type="submit">登録</button>
                     </div>
                 </div>

@@ -92,9 +92,20 @@
 .button--back {
     width: 150px;
     padding: 4px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: rgb(224, 224, 224);
+    border-radius: 3px;
 }
 
 .button--store {
     width: 150px;
     padding: 4px 20px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+    background-color: orange;
+    cursor: pointer;
 }

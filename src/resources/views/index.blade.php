@@ -76,9 +76,13 @@
                         @endphp
 
                         @if (str_starts_with($img, 'products/'))
+                        <a href="/products/detail/{{ $product->id }}">
                             <img class="img-storage" src="{{ asset('storage/' . $img) }}" alt="{{ $product->name }}（storage）">
+                        </a>
                         @else
+                        <a href="/products/detail/{{ $product->id }}">
                             <img class="img-public" src="{{ asset($img) }}" alt="{{ $product->name }}（public）">
+                        </a>
                         @endif
                     </div>
 
