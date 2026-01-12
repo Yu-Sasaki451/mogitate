@@ -31,15 +31,30 @@
                     <button class="store-content__image-button" type="button" id="imagePickBtn">
                         ファイルを選択
                     </button>
+                    <div class="product__error">
+                            @error('image')
+                            {{ $message }}
+                            @enderror
+                    </div>
                 </div>
                 <div class="detail__card--meta">
                     <div class="meta__item">
                         <p class="meta__item-title">商品名</p>
                         <input class="meta__item-input" type="text" name="name" value="{{ $product->name }}">
+                        <div class="product__error">
+                            @error('name')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                     <div class="meta__item">
                         <p class="meta__item-title">値段</p>
                         <input class="meta__item-input" type="text" name="price" value="{{ $product->price }}">
+                        <div class="product__error">
+                            @error('price')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                     <div class="meta__item">
                         <p class="meta__item-title">季節</p>
@@ -57,12 +72,22 @@
                                 </label>
                             @endforeach
                         </div>
+                        <div class="product__error">
+                            @error('season_id')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="detail__textarea">
                 <p class="detail-title">商品説明</p>
                 <textarea class="textarea" name="description">{{ $product->description }}</textarea>
+                <div class="product__error">
+                            @error('description')
+                            {{ $message }}
+                            @enderror
+                </div>
             </div>
             <div class="detail__button">
                 <div class="grid--center">

@@ -109,3 +109,8 @@
     background-color: orange;
     cursor: pointer;
 }
+
+.product__error {
+    color: red;
+    height: 10px;
+}

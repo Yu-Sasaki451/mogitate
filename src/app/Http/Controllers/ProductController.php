@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Season;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -53,7 +54,7 @@ class ProductController extends Controller
     return view('store', compact('imageOptions','subDir','seasons'));
 }
 
-    public function store(Request $request){
+    public function store(ProductRequest $request){
         $products = $request->only([
             'name',
             'price',
@@ -80,7 +81,7 @@ class ProductController extends Controller
         return view('edit',compact('product','seasons'));
     }
 
-    public function update(Request $request, $id){
+    public function update(ProductRequest $request, $id){
     $product = Product::findOrFail($id);
 
     $data = $request->only(['name', 'price', 'description']);

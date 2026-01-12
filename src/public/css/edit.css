@@ -133,3 +133,8 @@
     background: transparent;
     color: red;
 }
+
+.product__error {
+    color: red;
+    height: 10px;
+}

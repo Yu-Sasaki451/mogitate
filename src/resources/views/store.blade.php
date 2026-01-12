@@ -7,6 +7,8 @@
 @endsection
 
 @section('content')
+
+
 <form class="form"
         action="/products/register"
         method="post"
@@ -26,11 +28,21 @@
                 <div class="store-content__item">
                     <p class="store-content__item-header">商品名　<span class="item-header__span">必須</span></p>
                     <input class="store-content__item-input" type="text" name="name" value="{{ old('name') }}" placeholder="商品名を入力">
+                    <div class="product__error">
+                            @error('name')
+                            {{ $message }}
+                            @enderror
+                    </div>
                 </div>
 
                 <div class="store-content__item">
                     <p class="store-content__item-header">値段　<span class="item-header__span">必須</span></p>
                     <input class="store-content__item-input" type="text" name="price" value="{{ old('price') }}" placeholder="値段を入力">
+                    <div class="product__error">
+                            @error('price')
+                            {{ $message }}
+                            @enderror
+                    </div>
                 </div>
 
                 <div class="store-content__item">
@@ -55,6 +67,11 @@
                             hidden
                         >
                     </div>
+                    <div class="product__error">
+                            @error('image')
+                            {{ $message }}
+                            @enderror
+                    </div>
                 </div>
 
                 <div class="store-content__item">
@@ -77,11 +94,21 @@
                             </label>
                         @endforeach
                     </div>
+                    <div class="product__error">
+                            @error('season_id')
+                            {{ $message }}
+                            @enderror
+                    </div>
                 </div>
 
                 <div class="store-content__item">
                     <p class="store-content__item-header">商品説明　<span class="item-header__span">必須</span></p>
                     <textarea class="store-content__item-textarea" name="description" id="description" placeholder="商品の説明を入力">{{ old('description') }}</textarea>
+                    <div class="product__error">
+                            @error('description')
+                            {{ $message }}
+                            @enderror
+                    </div>
                 </div>
 
                 <div class="store-content__item">
