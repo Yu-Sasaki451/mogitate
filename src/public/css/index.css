@@ -41,6 +41,8 @@
     margin-bottom: 15px;
     border: 2px solid gainsboro;
     border-radius: 20px;
+    color: #bdbcbc;
+    padding: 0 8px;
 }
 
 .search-button {
@@ -52,6 +54,23 @@
     cursor: pointer;
 }
 
+.sidebar__sort {
+    margin-top: 20px;
+}
+
+.sort-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sort-select {
+    width: 100%;
+    height: 40px;
+    color: #ddd;
+    border: 2px solid gainsboro;
+    border-radius: 3px;
+}
+
 .index__content {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -61,7 +80,8 @@
 .product-card {
     display: grid;
     grid-template-rows: 1fr auto;
-    height: 300px;
+    width: 400px;
+    height: 350px;
     grid-template-rows: 80% 20%;
     box-shadow: 3px 3px 10px 3px gainsboro;
 }
@@ -81,6 +101,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 20px;
     padding: 0 20px;
     background-color: rgb(254, 249, 249);
 }
@@ -88,4 +109,64 @@
 .paginate {
     grid-column: 2;
     justify-items: center;
+}
+
+.sort-modal {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+}
+
+.sort-modal__content {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+}
+
+.sort-modal__title {
+    font-weight: 700;
+}
+
+.sort-modal__close {
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.sort-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 6px 10px;
+    border: 1px solid #f2c400;
+    border-radius: 999px;
+    background: #fff;
+    width: fit-content;
+}
+
+.sort-tag__text {
+    font-size: 12px;
+    line-height: 1;
+    color: #6a5a00;
+}
+
+.sort-tag__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #f2c400;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1;
+    color: #f2c400;
 }

@@ -9,9 +9,33 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function index(){
-        $products = Product::Paginate(6);
-        return view('index', compact('products'));
+    public function index(Request $request){
+
+        $keyword = trim((string) $request->query('keyword', ''));
+        $sort = (string) $request->query('sort', '');
+
+        $sortMap = [
+        'price_desc' => ['price', 'desc'],
+        'price_asc'  => ['price', 'asc'],
+        ];
+
+        $query = Product::query();
+
+        if ($keyword !== '') {
+        $escaped = addcslashes($keyword, "\\%_");
+        $query->whereRaw("name LIKE ? ESCAPE '\\\\'", ["%{$escaped}%"]);
+        }
+
+        if (isset($sortMap[$sort])) {
+        [$col, $dir] = $sortMap[$sort];
+        $query->orderBy($col, $dir);
+        } else {
+        $sort = '';
+        }
+        $products = $query
+            ->paginate(6)
+            ->appends($request->query());
+        return view('index', compact('products', 'keyword', 'sort'));
     }
 
     public function create()

@@ -18,14 +18,53 @@
 
     <div class="index__main">
         <aside class="index__sidebar">
-            <div class="sidebar__search">
-                <input class="search-input" type="text" placeholder="商品名で検索">
-                <button class="search-button">検索</button>
-            </div>
-            <div class="sidebar__sort">
-                <p>価格順で表示</p>
-                <input type="text">
-            </div>
+            <form action="/product/search" method="get">
+                <div class="sidebar__search">
+                    <input class="search-input"
+                        type="text"
+                        name="keyword"
+                        value="{{ $keyword ?? request('keyword') }}"
+                        placeholder="商品名で検索">
+                    <button class="search-button" type="submit">検索</button>
+                </div>
+                <div class="sidebar__sort">
+                    <p class="sort-title">価格順で表示</p>
+                    <select class="sort-select" name="sort" id="sort">
+                        <option value="" {{ ($sort ?? request('sort')) === '' ? 'selected' : '' }}>
+                            価格で並び替え
+                        </option>
+                        <option value="price_desc" {{ ($sort ?? request('sort')) === 'price_desc' ? 'selected' : '' }}>
+                            高い順に表示
+                        </option>
+                        <option value="price_asc" {{ ($sort ?? request('sort')) === 'price_asc' ? 'selected' : '' }}>
+                            低い順に表示
+                        </option>
+                    </select>
+
+                    @php
+                        $currentSort = $sort ?? (string) request('sort', '');
+
+                        $sortLabelMap = [
+                            'price_desc' => '高い順に表示',
+                            'price_asc'  => '低い順に表示',
+                        ];
+
+                        $sortLabel = $sortLabelMap[$currentSort] ?? null;
+
+                        // sort と page だけ消して、keyword等は残す
+                        $resetQuery = request()->except(['sort', 'page']);
+                        $resetSortUrl = url()->current() . (count($resetQuery) ? ('?' . http_build_query($resetQuery)) : '');
+                    @endphp
+
+                    @if($sortLabel)
+                        <div class="sort-tag" aria-label="並び替え条件">
+                            <span class="sort-tag__text">{{ $sortLabel }}</span>
+                            <a class="sort-tag__close" href="{{ $resetSortUrl }}" aria-label="並び替えをリセット">×</a>
+                        </div>
+                    @endif
+
+                </div>
+            </form>
         </aside>
 
         <section class="index__content">
