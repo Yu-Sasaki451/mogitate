@@ -92,11 +92,10 @@
                     </div>
                 </div>
             @endforeach
-
-            <div class="paginate">
-                {{ $products->links('vendor.pagination.paginate') }}
-            </div>
         </section>
+        <div class="paginate">
+            {{ $products->links('vendor.pagination.paginate') }}
+        </div>
     </div>
 </div>
 @endsection

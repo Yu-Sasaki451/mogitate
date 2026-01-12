@@ -109,6 +109,7 @@
 .paginate {
     grid-column: 2;
     justify-items: center;
+    margin-top: 50px;
 }
 
 .sort-modal {
