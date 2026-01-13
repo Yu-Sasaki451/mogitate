@@ -23,7 +23,10 @@ phpMyAdmin
 
 下記コマンドを 1 行ずつ実行してください<br>
 
-1.　 git clone git@github.com:Yu-Sasaki451/contact-form.git<br> 2.　 docker compose up -d --build
+1.git クローン<br>
+git clone git@github.com:Yu-Sasaki451/contact-form.git<br>
+2.Docker ビルド<br>
+docker compose up -d --build
 
 ### Laravel 　環境構築
 
