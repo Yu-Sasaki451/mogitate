@@ -1,4 +1,4 @@
-# 季節の商品
+# mogitate -Seasonal products-
 
 ## 概要
 
