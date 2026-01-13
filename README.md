@@ -41,54 +41,44 @@ docker compose up -d --build
 
 1.ディレクトリチェンジ
 
-```cd product
-
-2.PHPコンテナへ入る
-
+```
+cd product
 ```
 
+2.PHP コンテナへ入る
+
+```
 docker compose exec php bash
-
 ```
 
-3.composerインストール
+3.composer インストール
 
 ```
-
 composer install
-
 ```
 
-4.　.envコピー　※環境変数は適宜変更してください
+4.　.env コピー　※環境変数は適宜変更してください
 
 ```
-
 cp .env.example .env
-
 ```
 
 5.アプリケーションキー作成
 
 ```
-
 php artisan key:generate
-
 ```
 
 6.　マイグレーション実行
 
 ```
-
 php artisan migrate
-
 ```
 
 7.　シーディング実行
 
 ```
-
 php artisan db:seed
-
 ```
 
 ## URL
@@ -99,4 +89,7 @@ phpMyAdmin：http://localhost:8080/
 ## ER 図
 
 ![ER Diagram](src/public/er.svg)
+
+```
+
 ```
