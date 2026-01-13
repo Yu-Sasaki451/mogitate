@@ -27,7 +27,7 @@ class ProductRequest extends FormRequest
             'name' => 'required',
             'price' => 'required|numeric|between:0,10000',
             'image' => 'mimes:jpeg,png|required',
-            'season_id' => 'required',
+            'season_ids' => 'required',
             'description' => 'required|max:120',
         ];
     }
@@ -40,7 +40,7 @@ class ProductRequest extends FormRequest
             'price.between' => '0∼10000円以内で入力してください',
             'image.required' => '画像を登録してください',
             'image.mimes' => '「.png」または「.jpeg」形式でアップロードしてください',
-            'season_id.required' => '季節を選択してください',
+            'season_ids.required' => '季節を選択してください',
             'description.required' => '商品説明を入力してください',
             'description.max' => '120文字以内で入力してください',
         ];
