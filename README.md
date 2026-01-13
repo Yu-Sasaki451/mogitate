@@ -26,18 +26,70 @@ phpMyAdmin
 1.git クローン
 
 ```
-git clone git@github.com:Yu-Sasaki451/contact-form.git
+git@github.com:Yu-Sasaki451/mogitate.git
 ```
 
-2.Docker ビルド<br>
+2.Docker ビルド
 
-
+```
+docker compose up -d --build
+```
 
 ### Laravel 　環境構築
 
-「contact-form」ディレクトリにチェンジディレクトリし、下記コマンドを 1 行ずつ実行してください<br>
+下記コマンドを 1 行ずつ実行してください<br>
 
-1.　 docker compose exec php bash<br> 2.　 composer install<br> 3.　 cp .env.example .env 　※環境変数は適宜変更してください<br> 4.　 php artisan key:generate<br> 5.　 php artisan migrate<br> 6.　 php artisan db:seed
+1.ディレクトリチェンジ
+
+```cd product
+
+2.PHPコンテナへ入る
+
+```
+
+docker compose exec php bash
+
+```
+
+3.composerインストール
+
+```
+
+composer install
+
+```
+
+4.　.envコピー　※環境変数は適宜変更してください
+
+```
+
+cp .env.example .env
+
+```
+
+5.アプリケーションキー作成
+
+```
+
+php artisan key:generate
+
+```
+
+6.　マイグレーション実行
+
+```
+
+php artisan migrate
+
+```
+
+7.　シーディング実行
+
+```
+
+php artisan db:seed
+
+```
 
 ## URL
 
@@ -47,3 +99,4 @@ phpMyAdmin：http://localhost:8080/
 ## ER 図
 
 ![ER Diagram](src/public/er.svg)
+```
