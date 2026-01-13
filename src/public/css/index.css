@@ -3,7 +3,7 @@
 }
 
 .index {
-    width: 100vw;
+    width: 100%;
     height: auto;
     padding: 20px 30px;
 }
@@ -80,8 +80,9 @@
 .product-card {
     display: grid;
     grid-template-rows: 1fr auto;
-    width: 400px;
-    height: 350px;
+    max-width: 100%;
+    min-width: 150px;
+    height: auto;
     grid-template-rows: 80% 20%;
     box-shadow: 3px 3px 10px 3px gainsboro;
 }
@@ -101,9 +102,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 20px;
-    padding: 0 20px;
+    padding: 0 10px;
     background-color: rgb(254, 249, 249);
+}
+
+.meta__text {
+    font-size: clamp(10px, 1.8vw, 30px);
 }
 
 .paginate {
@@ -170,4 +174,72 @@
     font-size: 12px;
     line-height: 1;
     color: #f2c400;
+}
+
+@media (max-width: 1100px){
+    .index__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .product-card {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        max-width: 100%;
+        min-width: 100px;
+        height: auto;
+        grid-template-rows: 80% 20%;
+        box-shadow: 3px 3px 10px 3px gainsboro;
+    }
+}
+
+@media (max-width: 768px) {
+    .index__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .product-card {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        max-width: 400px;
+        min-width: 100px;
+        height: auto;
+        grid-template-rows: 80% 20%;
+        box-shadow: 3px 3px 10px 3px gainsboro;
+    }
+
+    .index__main {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+}
+
+@media (max-width: 486px) {
+    .index__content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .product-card {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        max-width: 250px;
+        min-width: 100px;
+        height: auto;
+        grid-template-rows: 80% 20%;
+        box-shadow: 3px 3px 10px 3px gainsboro;
+    }
+
+    .index__main {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+    }
+
+    .meta__text {
+    font-size: clamp(10px, 1.8vw, 30px);
+}
 }

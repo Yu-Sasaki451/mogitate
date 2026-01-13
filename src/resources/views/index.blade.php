@@ -18,7 +18,7 @@
 
     <div class="index__main">
         <aside class="index__sidebar">
-            <form action="/product/search" method="get">
+            <form action="/products/search" method="get">
                 <div class="sidebar__search">
                     <input class="search-input"
                         type="text"
@@ -87,8 +87,8 @@
                     </div>
 
                     <div class="product-meta">
-                        <p>{{ $product->name }}</p>
-                        <p>¥{{ $product->price }}</p>
+                        <p class="meta__text">{{ $product->name }}</p>
+                        <p class="meta__text">¥{{ $product->price }}</p>
                     </div>
                 </div>
             @endforeach

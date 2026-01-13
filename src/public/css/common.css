@@ -3,15 +3,17 @@
 }
 
 .body {
+    margin: 0 auto;
     background-color: rgb(248, 242, 236);
 }
 
 .header {
-    width: 100vw;
+    width: 100%;
     background-color: white;
 }
 
 .header__inner {
+    width: 100%;
     display: flex;
     align-items: center;
     height: 60px;
