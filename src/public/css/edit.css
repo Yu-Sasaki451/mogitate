@@ -2,10 +2,11 @@
     box-sizing: border-box;
 }
 
+
 .detail {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 90vh;
 }
 
 .detail__content {
@@ -17,6 +18,10 @@
     max-width: 800px;
     height: 70%;
     max-height: 700px;
+}
+
+.breadcrumb {
+    margin-bottom: 10px;
 }
 
 .detail__card {

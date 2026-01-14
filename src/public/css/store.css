@@ -5,7 +5,7 @@
 .store {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 90vh;
 }
 
 .store-content {
@@ -14,7 +14,7 @@
     max-height: 800px;
     height: 80%;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
 }

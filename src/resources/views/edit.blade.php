@@ -7,13 +7,14 @@
 @endsection
 
 @section('content')
-<form action="/products/{{ $product->id }}/update" method="post" enctype="multipart/form-data">
+<form class="form" action="/products/{{ $product->id }}/update" method="post" enctype="multipart/form-data">
     @method('patch')
     @csrf
     <div class="detail">
         <div class="detail__content">
             <div class="breadcrumb">
                 <a href="/products">商品一覧</a>
+                <span>>{{ $product->name }}</span>
             </div>
             <div class="detail__card">
                 <div class="detail__card--img">
