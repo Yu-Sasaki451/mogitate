@@ -4,15 +4,17 @@
 
 .store {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
 }
 
 .store-content {
-    width: 700px;
-    height: 800px;
+    max-width: 700px;
+    width: 70%;
+    max-height: 800px;
+    height: 80%;
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -83,15 +85,17 @@
 .store-content__item-button {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 400px;
+    justify-content: space-between;
+    width: 70%;
+    max-width: 400px;
     height: 30px;
     margin: 0 auto;
 }
 
 .button--back {
-    width: 150px;
-    padding: 4px 20px;
+    width: 50%;
+    max-width: 130px;
+    padding: 4px 10px;
     font-size: 16px;
     text-decoration: none;
     text-align: center;
@@ -101,8 +105,9 @@
 }
 
 .button--store {
-    width: 150px;
-    padding: 4px 20px;
+    width: 50%;
+    max-width: 130px;
+    padding: 4px 10px;
     font-size: 16px;
     border-radius: 3px;
     border: none;
@@ -113,4 +118,49 @@
 .product__error {
     color: red;
     height: 10px;
+}
+
+@media  (max-width: 700px) {
+
+    .button--back {
+        width: 45%;
+        max-width: 110px;
+        padding: 4px 10px;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+        color: black;
+        background-color: rgb(224, 224, 224);
+        border-radius: 3px;
+    }
+
+    .button--store {
+        width: 45%;
+        max-width: 110px;
+        padding: 4px 10px;
+        font-size: 16px;
+        border-radius: 3px;
+        border: none;
+        background-color: orange;
+        cursor: pointer;
+    }
+
+    .product__error {
+        color: red;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 428px) {
+
+    .header-logo {
+        text-align: center;
+    }
+
+    .product__error {
+        color: red;
+        font-size: 12px;
+    }
+
 }

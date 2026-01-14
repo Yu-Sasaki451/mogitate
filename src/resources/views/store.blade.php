@@ -95,7 +95,7 @@
                         @endforeach
                     </div>
                     <div class="product__error">
-                            @error('season_id')
+                            @error('season_ids')
                             {{ $message }}
                             @enderror
                     </div>

@@ -25,17 +25,3 @@
     font-size: 30px;
     color: rgb(243, 219, 4);
 }
-
-@media (min-width: 768px) {
-    .header__inner {
-        height: 80px;
-        font-size: 50px;
-        padding: 0 24px;
-    }
-
-    .header__logo {
-    font-family: 'Caveat', cursive;
-    font-size: 50px;
-    color: rgb(243, 219, 4);
-    }
-}
