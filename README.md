@@ -26,7 +26,7 @@ phpMyAdmin
 1.git クローン
 
 ```
-git@github.com:Yu-Sasaki451/mogitate.git
+git clone git@github.com:Yu-Sasaki451/mogitate.git
 ```
 
 2.Docker ビルド
