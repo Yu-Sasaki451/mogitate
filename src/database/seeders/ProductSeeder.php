@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
                 ビタミンCなどの栄養素も豊富のため、美肌効果や疲労回復効果も期待できます。
                 もぎたてフルーツのスムージーをお召し上がりください！
                 TEXT,
-                'image' => 'img/kiwi.png',
+                'image' => 'img/fruits-img/kiwi.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
@@ -38,7 +38,7 @@ class ProductSeeder extends Seeder
                 ビタミンCはもちろん食物繊維も豊富なため、腸内環境の改善も期待できます。
                 もぎたてフルーツのスムージーをお召し上がりください！
                 TEXT,
-                'image' => 'img/strawberry.png',
+                'image' => 'img/fruits-img/strawberry.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
@@ -50,7 +50,7 @@ class ProductSeeder extends Seeder
                 酸味は控えめで、甘さと濃厚な果汁が魅力の商品です。
                 もぎたてフルーツのスムージをお召し上がりください！
                 TEXT,
-                'image' => 'img/orange.png',
+                'image' => 'img/fruits-img/orange.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
@@ -63,7 +63,7 @@ class ProductSeeder extends Seeder
                 カロリーが気になる方にもおすすめの商品です。
                 もぎたてフルーツのスムージーをお召し上がりください！
                 TEXT,
-                'image' => 'img/watermelon.png',
+                'image' => 'img/fruits-img/watermelon.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
@@ -76,7 +76,7 @@ class ProductSeeder extends Seeder
                 ビタミンEが豊富なため、生活習慣病の予防にもおすすめです。
                 もぎたてフルーツのスムージーをお召し上がりください！
                 TEXT,
-                'image' => 'img/peach.png',
+                'image' => 'img/fruits-img/peach.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
@@ -89,7 +89,7 @@ class ProductSeeder extends Seeder
                 疲れた脳や体のエネルギー補給にも最適の商品です。
                 もぎたてフルーツのスムージーをお召し上がりください！
                 TEXT,
-                'image_path' => 'img/muscat.png',
+                'image_path' => 'img/fruits-img/muscat.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
@@ -101,7 +101,7 @@ class ProductSeeder extends Seeder
                 当店では甘さと酸味のバランスが絶妙な国産のパイナップルを使用しています。
                 もぎたてフルーツのスムージをお召し上がりください！
                 TEXT,
-                'image' => 'img/pineapple.png',
+                'image' => 'img/fruits-img/pineapple.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
@@ -113,7 +113,7 @@ class ProductSeeder extends Seeder
                 高い糖度と適度な酸味が魅力で、鮮やかなパープルで見た目も可愛い商品です。
                 もぎたてフルーツのスムージーをお召し上がりください！
                 TEXT,
-                'image' => 'img/grapes.png',
+                'image' => 'img/fruits-img/grapes.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
@@ -125,7 +125,7 @@ class ProductSeeder extends Seeder
                 1杯でバナナの濃厚な甘みを存分に堪能できます。
                 もぎたてフルーツのスムージーをお召し上がりください！
                 TEXT,
-                'image' => 'img/banana.png',
+                'image' => 'img/fruits-img/banana.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
@@ -137,7 +137,7 @@ class ProductSeeder extends Seeder
                 カリウムが多く含まれているためむくみ解消効果も抜群です。
                 もぎたてフルーツのスムージーをお召し上がりください！
                 TEXT,
-                'image' => 'img/melon.png',
+                'image' => 'img/fruits-img/melon.png',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],

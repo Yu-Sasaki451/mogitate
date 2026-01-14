@@ -79,9 +79,15 @@ php artisan migrate
 php artisan db:seed
 ```
 
+7.シンボリックリンク作成
+
+```
+php artisan storage:link
+```
+
 ## URL
 
-開発環境：http://localhost/<br>
+開発環境：http://localhost/products<br>
 phpMyAdmin：http://localhost:8080/
 
 ## ER 図
