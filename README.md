@@ -32,6 +32,10 @@ git clone git@github.com:Yu-Sasaki451/mogitate.git
 2.Docker ビルド
 
 ```
+cd mogitate
+```
+
+```
 docker compose up -d --build
 ```
 
@@ -39,43 +43,37 @@ docker compose up -d --build
 
 下記コマンドを 1 行ずつ実行してください<br>
 
-1.ディレクトリチェンジ
-
-```
-cd product
-```
-
-2.PHP コンテナへ入る
+1.PHP コンテナへ入る
 
 ```
 docker compose exec php bash
 ```
 
-3.composer インストール
+2.composer インストール
 
 ```
 composer install
 ```
 
-4.　.env コピー　※環境変数は適宜変更してください
+3.　.env コピー　※環境変数は適宜変更してください
 
 ```
 cp .env.example .env
 ```
 
-5.アプリケーションキー作成
+4.アプリケーションキー作成
 
 ```
 php artisan key:generate
 ```
 
-6.　マイグレーション実行
+5.　マイグレーション実行
 
 ```
 php artisan migrate
 ```
 
-7.　シーディング実行
+6.　シーディング実行
 
 ```
 php artisan db:seed
